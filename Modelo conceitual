@@ -1,0 +1,28 @@
+@startuml
+class Produto {
+  +nome: String
+  +preço: decimal
+}
+
+class Pedido {
+  +id: int
+  +cliente: Cliente
+  +status: String
+  +dataEntrega: Date
+}
+
+class Cliente {
+  +nome: String
+  +email: String
+  +endereco: String
+}
+
+class Funcionario {
+  +nome: String
+  +cargo: String
+}
+
+Pedido "1" -- "*" Produto
+Pedido "*" -- "1" Cliente
+Pedido "*" -- "1" Funcionario
+@enduml
