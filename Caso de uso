@@ -1,0 +1,20 @@
+@startuml
+left to right direction
+actor Cliente as C
+actor Funcionário as F
+rectangle "Sistema de Gerenciamento de Pedidos" {
+  C -- (Fazer Pedido)
+  C -- (Acompanhar Pedido)
+  C -- (Visualizar Informações do Pedido)
+  F -- (Gerenciar Pedidos)
+  (Fazer Pedido) -- (Adicionar Produto ao Carrinho)
+  (Fazer Pedido) -- (Verificar Carrinho)
+  (Fazer Pedido) -- (Confirmar Pedido)
+  (Fazer Pedido) -- (Inserir Dados do Pagamento)
+  (Gerenciar Pedidos) -- (Visualizar Informações do Pedido)
+  (Gerenciar Pedidos) -- (Atualizar Status do Pedido)
+  (Acompanhar Pedido) .> (Visualizar Informações do Pedido) : include
+  (Gerenciar Pedidos) .> (Visualizar Informações do Pedido) : include
+  (Gerenciar Pedidos) .> (Atualizar Status do Pedido) : include
+}
+@enduml
